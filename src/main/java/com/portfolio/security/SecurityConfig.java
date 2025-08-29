@@ -33,7 +33,7 @@ public class SecurityConfig {
                 .formLogin(form ->
                         form
                                 .loginPage("/")
-                                .loginProcessingUrl("/ironman112/")
+                                .loginProcessingUrl("/ironman112/home")
                                 .permitAll()
                 )
                 .logout(logout -> logout.permitAll()
