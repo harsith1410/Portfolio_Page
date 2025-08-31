@@ -12,6 +12,18 @@ public class page_controller {
     public String ironman112() {
         return "home";
     }
+    @GetMapping("/about")
+    public String about() {
+        return "about";
+    }
+    @GetMapping("/projects")
+    public String projects() {
+        return "Projects";
+    }
+    @GetMapping("/skills")
+    public String skills() {
+        return "Skills";
+    }
 
 
 }
