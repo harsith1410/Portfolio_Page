@@ -29,6 +29,7 @@ public class SecurityConfig {
                 .username("admin")
                 .password("{noop}test123#")
                 .build();
+
         return new InMemoryUserDetailsManager(user,admin);
     }
 
