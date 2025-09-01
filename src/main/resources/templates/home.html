@@ -56,6 +56,22 @@
             color: #1e293b;
             box-shadow: 0 0 20px 2px rgba(56, 189, 248, 0.1);
         }
+
+        #github{
+            scale: 200%;
+            background-color: #38bdf8;
+            color: #38bdf8;
+        }
+        #linkedin{
+            scale: 200%;
+            background-color: #38bdf8;
+            color: #38bdf8;
+        }
+        #instagram{
+            scale: 200%;
+            background-color: #38bdf8;
+            color: #38bdf8;
+        }
     </style>
 </head>
 <body>
@@ -97,14 +113,32 @@
             </div>
 
             <div class="col">
-                <div class="row" style="height: 50%">
+                <div class="row" style="height: 15%">
+                </div>
+                <div class="row" style="height: 35%">
                     <div class="align-self-bottom">
-                        Hi I'm Harsith
-                        Student at Shiv Nadar University
+                        <h1>Hi I'm Harsith</h1>
+                        <p style="font-size: large">Student at Shiv Nadar University</p>
+                        <p style="font-size: large">Passionate about Web development and
+                            solving complex programming problems using efficient code</p>
                     </div>
                 </div>
                 <div class="row" style="height: 50%">
-                    <p>Passionate about Web development and Competitive Programming</p>
+                    <div class="col" style="width: fit-content">
+                        <a href="https://github.com/harsith1410/Portfolio_Page.git">
+                            <img th:src="@{/images/github.svg}" class="img-thumbnail rounded" id="github"/>
+                        </a>
+                    </div>
+                    <div class="col" style="width: fit-content">
+                        <a href="https://github.com/harsith1410/Portfolio_Page.git">
+                            <img th:src="@{/images/linkedin.svg}" class="img-thumbnail rounded" id="linkedin"/>
+                        </a>
+                    </div>
+                    <div class="col" style="width: fit-content">
+                        <a href="https://github.com/harsith1410/Portfolio_Page.git">
+                            <img th:src="@{/images/instagram.svg}" class="img-thumbnail rounded" id="instagram"/>
+                        </a>
+                    </div>
                 </div>
             </div>
 
