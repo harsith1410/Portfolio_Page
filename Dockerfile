@@ -1,14 +1,10 @@
-# Use an official OpenJDK runtime as a parent image
-FROM openjdk:21-jdk-slim
-
-# Set the working directory in the container
+FROM maven:3.9.6-eclipse-temurin-21 AS builder
 WORKDIR /app
+COPY . .
+RUN mvn clean package -DskipTests
 
-# Copy the packaged JAR file from the target folder into the container
-COPY target/Portfolio-0.0.1-SNAPSHOT.jar app.jar
-
-# Make port 8080 available to the world outside this container
-EXPOSE 4720
-
-# Run the JAR file when the container launches
-ENTRYPOINT ["java", "-jar", "app.jar"]
+FROM openjdk:21-jdk-slim
+WORKDIR /app
+COPY --from=builder /app/target/Portfolio-0.0.1-SNAPSHOT.jar app.jar
+EXPOSE 8080
+CMD ["java", "-jar", "app.jar"]
