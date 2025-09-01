@@ -12,23 +12,13 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfig {
 
-    @Value("${portfolio.user.name}")
-    private String username;
-
-    @Value("${portfolio.user.password}")
-    private String password;
-
     @Bean
     public InMemoryUserDetailsManager inMemoryUserDetailsManager() {
-        UserDetails user = User.builder()
-                .username(username) // Use the injected username
-                .password("{noop}" + password) // Use the injected password
-                .build();
         UserDetails user_local = User.builder()
                 .username("Harsith1410") // Use the injected username
                 .password("{noop}test123#") // Use the injected password
                 .build();
-        return new InMemoryUserDetailsManager(user,user_local);
+        return new InMemoryUserDetailsManager(user_local);
     }
 
     @Bean
