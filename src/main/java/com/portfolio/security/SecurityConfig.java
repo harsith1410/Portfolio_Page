@@ -28,6 +28,7 @@ public class SecurityConfig {
 
         http.authorizeHttpRequests(configurer ->
                         configurer
+                                .requestMatchers("/static/**").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .formLogin(form ->
