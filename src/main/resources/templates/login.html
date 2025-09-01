@@ -1,77 +1,114 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Login Page</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+    <title>Login Page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-    </head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
 
-    <body>
-        <div class="container">
-            <div id="loginbox" style="margin-top: 50px;" class="col-md-3 col-md-offset-2 col-sm-6 col-sm-offset-2">
-                <div class="card border-info">
-                    <div class="card-header bg-info">
-                        Sign In
+    <!-- Custom styling to match the portfolio theme -->
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            background-color: #1e293b;
+            border: 1px solid #38bdf8;
+            border-radius: 15px;
+        }
+
+        .card-header {
+            background-color: transparent;
+            border-bottom: 1px solid #38bdf8;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .form-control {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            border: 1px solid #38bdf8;
+        }
+
+        .form-control::placeholder {
+            color: #94a3b8;
+        }
+
+        .form-control:focus {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+            border-color: #38bdf8;
+        }
+
+        .btn-glow {
+            background-color: #38bdf8;
+            border-color: #38bdf8;
+            color: #0f172a;
+            font-weight: 600;
+            padding: 0.5rem 1.5rem;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+            transition: all 0.3s ease;
+        }
+
+
+
+        .alert-danger {
+            background-color: #dc354533;
+            border-color: #dc354588;
+            color: #f8d7da;
+        }
+    </style>
+</head>
+
+<body>
+<div class="login-container">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header text-center">
+                Sign In
+            </div>
+
+            <div class="card-body p-4">
+
+                <form th:action="@{/authenticate}" method="POST">
+
+                    <div th:if="${param.error}" class="alert alert-danger mb-3">
+                        Invalid username or password.
+                    </div>
+                    <div th:if="${param.logout}" class="alert alert-danger mb-3">
+                        You have been logged out.
                     </div>
 
-                    <div class="card-body">
-                        <div class="card-text">
 
-                            <!-- Login Form -->
-                            <form action="#" th:action="@{/authenticate}" method="POST" class="form-horizontal">
-
-                                <!-- Place for messages: error, alert etc ... -->
-                                <div class="form-group">
-                                    <div class="col-xs-15">
-                                        <div>
-                                            <!-- Check for login error -->
-
-
-                                            <div th:if="${param.error}">
-
-                                                <div class="alert alert-danger col-xs-offset-1 col-xs-10">
-                                                    Invalid username and password.
-                                                </div>
-
-                                            </div>
-
-                                            <div th:if="${param.logout}">
-
-                                                <div class="alert alert-danger col-xs-offset-1 col-xs-10">
-                                                    You have been logged out.
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- User name -->
-                                <div style="margin-bottom: 25px;" class="input-group">
-                                    <input type="text" name="username" placeholder="username" class="form-control" />
-                                </div>
-
-                                <!-- Password -->
-                                <div style="margin-bottom: 25px;" class="input-group">
-                                    <input type="password" name="password" placeholder="password" class="form-control" />
-                                </div>
-
-                                <!-- Login/Submit Button -->
-                                <div style="margin-top: 10px;" class="form-group">
-                                    <div class="col-sm-6 controls">
-                                        <button type="submit" class="btn btn-success">Login</button>
-                                    </div>
-                                </div>
-
-                            </form>
-
-                        </div>
+                    <div class="mb-3">
+                        <input type="text" name="username" placeholder="Username" class="form-control" required/>
                     </div>
-                </div>
+
+
+                    <div class="mb-4">
+                        <input type="password" name="password" placeholder="Password" class="form-control" required/>
+                    </div>
+
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-glow">Login</button>
+                    </div>
+
+                </form>
             </div>
         </div>
-    </body>
+    </div>
+</div>
+</body>
 </html>
