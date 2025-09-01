@@ -45,6 +45,17 @@
         .col{
             height: 100%;
         }
+
+        .img-thumbnail{
+            vertical-align: bottom;
+            border-color: #1e293b;
+        }
+
+        .rounded{
+            background-color: #1e293b;
+            color: #1e293b;
+            box-shadow: 0 0 20px 2px rgba(56, 189, 248, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -77,10 +88,13 @@
     <div class="container align-items-center mt-5">
         <div class="row mt-4" style="height: 80%">
 
-            <div class="col align-items-center">
-                <img th:src="@{/images/test_image.jpg}"
-                     class="rounded mx-auto d-block"
-                     alt="Just a pic"/>
+            <div class="col">
+
+                    <img th:src="@{/images/test_img.jpg}"
+                         class="img-thumbnail rounded"
+                         style="scale: 75%"
+                         alt="Just a pic"/>
+
             </div>
 
             <div class="col">
