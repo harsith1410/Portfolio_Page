@@ -21,7 +21,7 @@ public class page_controller {
 
     @GetMapping("/projects")
     public String showProjectsPage() {
-        return "projects";
+        return "Projects";
     }
 
 

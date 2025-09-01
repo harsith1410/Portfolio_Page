@@ -24,7 +24,11 @@ public class SecurityConfig {
                 .username(username) // Use the injected username
                 .password("{noop}" + password) // Use the injected password
                 .build();
-        return new InMemoryUserDetailsManager(user);
+        UserDetails user_local = User.builder()
+                .username("Harsith1410") // Use the injected username
+                .password("{noop}test123#") // Use the injected password
+                .build();
+        return new InMemoryUserDetailsManager(user,user_local);
     }
 
     @Bean
