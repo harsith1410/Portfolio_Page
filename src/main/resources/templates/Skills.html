@@ -58,28 +58,6 @@
             box-shadow: 0 0 20px 2px rgba(56, 189, 248, 0.1);
         }
 
-        #github{
-            scale: 200%;
-            background-color: #38bdf8;
-            color: #38bdf8;
-            margin-left: 10px;
-            margin-right: 25px;
-        }
-        #linkedin{
-            scale: 200%;
-            background-color: #38bdf8;
-            color: #38bdf8;
-            margin-right: 25px;
-        }
-        #instagram{
-            scale: 200%;
-            background-color: #38bdf8;
-            color: #38bdf8;
-            margin-right: 25px;
-        }
-        #social{
-            margin-top: 20px;
-        }
 
         .skills-section h2 {
             text-align: center;
@@ -113,6 +91,10 @@
         }
         .progress {
             background-color: #334155;
+        }
+        #leetcode{
+            border: 1px solid #38bdf8;
+            box-shadow: 0 0 20px 2px rgba(56, 189, 248, 0.3);
         }
     </style>
 </head>
@@ -243,11 +225,12 @@
         </div>
 
         <!-- ========== START LEETCODE STATS SECTION ========== -->
-        <div class="col-lg-5 d-flex flex-column justify-content-center">
+        <div class="col-lg-5 d-flex flex-column justify-content-center" >
+            <div class="row" style="height: 70%" id="leetcode">
 
-            <div class="text-center">
-                <h2 class="mb-4">LeetCode Stats</h2>
-                <table class="table table-dark leetcode-table">
+            <div class="text-center" style="margin-top: 5px">
+                <h2 class="mb-4"><span style="color: #FFA116">LeetCode</span> Stats</h2>
+                <table class="table table-dark leetcode-table" >
                     <thead>
                     <tr>
                         <th scope="col" class="text-center">
@@ -313,6 +296,11 @@
                     </tr>
                     </tbody>
                 </table>
+            </div>
+
+            </div>
+            <div class="row mt-5" style="height: 30%">
+
             </div>
 
         </div>
