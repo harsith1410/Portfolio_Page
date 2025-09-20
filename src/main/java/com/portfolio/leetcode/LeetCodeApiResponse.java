@@ -1,6 +1,6 @@
 package com.portfolio.leetcode;
 
-// This class matches the JSON from leetcode-stats-api.herokuapp.com/api/
+
 public class LeetCodeApiResponse {
     public String status;
     public String message;
@@ -15,7 +15,7 @@ public class LeetCodeApiResponse {
 
     public int ranking;
 
-    // --- Getters and Setters ---
+
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
     public String getMessage() { return message; }
