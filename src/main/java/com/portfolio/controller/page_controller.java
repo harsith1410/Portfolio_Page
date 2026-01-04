@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
@@ -12,6 +13,11 @@ public class page_controller {
 
     @Autowired
     private LeetCodeService leetCodeService;
+
+    @RequestMapping(value = "/")
+    public String redirect() {
+        return "forward:/ironman112/home";
+    }
 
     @GetMapping("/ironman112/home")
     public String ironman112() {
