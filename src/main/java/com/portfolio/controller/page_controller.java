@@ -40,11 +40,6 @@ public class page_controller {
     @GetMapping("/skills")
     public String showContactPage(Model model) {
 
-        String leetCodeUsername = "harsith1410"; // Your LeetCode username
-        leetCodeService.getUserStats(leetCodeUsername).ifPresent(stats -> {
-            model.addAttribute("leetCodeStats", stats);
-        });
-
         return "Skills";
     }
 }
